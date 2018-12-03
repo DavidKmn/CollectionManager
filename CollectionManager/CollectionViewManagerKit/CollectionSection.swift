@@ -65,6 +65,14 @@ open class CollectionSection: Equatable, DiffableModel {
         self.models.insert(contentsOf: models, at: index)
     }
     
+    public func getLastElement() -> DiffableModel? {
+        return models.last
+    }
+    
+    public func removeLast() -> DiffableModel? {
+        return self.models.removeLast()
+    }
+    
     @discardableResult
     public func remove(at index: Int) -> DiffableModel? {
         guard index < models.count else { return nil }

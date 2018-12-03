@@ -11,5 +11,6 @@ import Foundation
 protocol UsersDisplayViewInput: class {
     func appendSection(_ section: CollectionSection)
     func registerUserLinker(_ linker: CollectionViewModelLinker<User, UserCollectionViewCell>)
-    func reloadData()
+    func displayEditingSheet(withOptions options: [EditingOptionTestingType])
+    func reloadData(after: (() -> Void)?)
 }

@@ -37,7 +37,7 @@ extension UsersDisplayInteractor: UsersDisplayInteractorInput {
             guard let self = self else { return }
             
             if let error = error {
-                print("ERROR !!! \n" + error.localizedDescription)
+                print("ERROR !!! " + error.localizedDescription)
                 return
             }
             

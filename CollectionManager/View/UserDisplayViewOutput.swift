@@ -10,4 +10,5 @@ import Foundation
 
 protocol UsersDisplayViewOutput {
     func viewIsReady()
+    func handleAddModelsTap()
 }
