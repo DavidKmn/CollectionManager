@@ -29,7 +29,7 @@ open class CollectionSection: Equatable, DiffableModel {
     private var temporaryRemovedModels: [IndexPath : DiffableModel] = [:]
     
     private weak var manager: CollectionViewManager?
-    
+
     public init(models: [DiffableModel]?, header: CollectionSectionProtocol? = nil, footer: CollectionSectionProtocol? = nil) {
         self.models = models ?? []
         self.header = header

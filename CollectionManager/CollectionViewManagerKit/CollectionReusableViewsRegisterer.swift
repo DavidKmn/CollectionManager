@@ -11,6 +11,7 @@ import UIKit
 final class CollectionReusableViewsRegisterer {
     
     private weak var collectionView: UICollectionView?
+
     private var cellReuseIdentifiers: Set<String> = []
     private var headerReuseIdentifiers: Set<String> = []
     private var footerReuseIdentifiers: Set<String> = []

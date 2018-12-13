@@ -1,4 +1,3 @@
- //
 //  CollectionViewManager.swift
 //  CollectionManager
 //
@@ -158,7 +157,6 @@ class CollectionViewManager: NSObject, UICollectionViewDelegate {
     }
     
     /// Registers a linker
-    /// Be sure to register all required linkers before using the collection itself.
     public func register(linker: ViewModelLinkerProtocol) {
         let modelUUID = String(describing: linker.modelType)
         self.linkers[modelUUID] = linker
@@ -174,10 +172,7 @@ class CollectionViewManager: NSObject, UICollectionViewDelegate {
     public func setup(sections: [CollectionSection]) {
         self.sections = sections
     }
-    
-    /// Create a new section, append to the end of the managed sections, insert in it the passed models
-    ///
-    /// - Parameter models: models of the section
+
     @discardableResult
     public func append(models: [DiffableModel]) -> CollectionSection {
         let section = CollectionSection(models: models)
