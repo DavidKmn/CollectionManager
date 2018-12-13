@@ -30,7 +30,6 @@ open class CollectionSection: Equatable, DiffableModel {
     
     private weak var manager: CollectionViewManager?
     
-    
     public init(models: [DiffableModel]?, header: CollectionSectionProtocol? = nil, footer: CollectionSectionProtocol? = nil) {
         self.models = models ?? []
         self.header = header
@@ -50,7 +49,7 @@ open class CollectionSection: Equatable, DiffableModel {
     }
     
     public func add(model: DiffableModel, at index: Int? = nil) {
-        if let index = index {
+        if let index = index, index < self.models.count {
             models.insert(model, at: index)
         } else {
             models.append(model)

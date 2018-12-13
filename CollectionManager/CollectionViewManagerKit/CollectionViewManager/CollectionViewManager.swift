@@ -1,4 +1,4 @@
-//
+ //
 //  CollectionViewManager.swift
 //  CollectionManager
 //
@@ -158,7 +158,7 @@ class CollectionViewManager: NSObject, UICollectionViewDelegate {
     }
     
     /// Registers a linker
-    /// Be sure to register all required adapters before using the collection itself.
+    /// Be sure to register all required linkers before using the collection itself.
     public func register(linker: ViewModelLinkerProtocol) {
         let modelUUID = String(describing: linker.modelType)
         self.linkers[modelUUID] = linker
@@ -175,9 +175,8 @@ class CollectionViewManager: NSObject, UICollectionViewDelegate {
         self.sections = sections
     }
     
-    /// Create a new sectoins, append to the end of the managed sections, insert in it the passed models
+    /// Create a new section, append to the end of the managed sections, insert in it the passed models
     ///
-    /// - Parameter models: models of the section
     /// - Parameter models: models of the section
     @discardableResult
     public func append(models: [DiffableModel]) -> CollectionSection {
@@ -229,7 +228,7 @@ class CollectionViewManager: NSObject, UICollectionViewDelegate {
     
     // MARK: Helpers
     /// Return the context for an element at given index.
-    /// It returns the instance of the model and the registered adapter used to represent it.
+    /// It returns the instance of the model and the registered linker used to represent it.
     ///
     /// - Parameter index: index path of the item.
     /// - Returns: context

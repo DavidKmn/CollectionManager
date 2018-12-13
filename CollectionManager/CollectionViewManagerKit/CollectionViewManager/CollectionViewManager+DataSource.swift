@@ -50,6 +50,7 @@ extension CollectionViewManager: UICollectionViewDataSource {
         let (model, linker) = self.context(forItemAt: indexPath)
         return (linker.dispatch(event: .shouldSelect, context: InternalCollectionViewModelLinkContext(model: model, indexPath: indexPath, scrollview: collectionView)) as? Bool) ?? true
     }
+    
     func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
         let (model, linker) = self.context(forItemAt: indexPath)
         return (linker.dispatch(event: .shouldDeselect, context: InternalCollectionViewModelLinkContext(model: model, indexPath: indexPath, scrollview: collectionView)) as? Bool) ?? true
